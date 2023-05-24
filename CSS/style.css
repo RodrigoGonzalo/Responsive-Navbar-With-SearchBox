@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body{
+    background: whitesmoke;
+}
+
+nav{
+    background: black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 100px;
+}
+
+nav .logo{
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+nav .navbar-items{
+    display: flex;
+    list-style: none;
+    padding: 0 0 0 40px;
+    flex: 1;
+}
+
+nav .navbar-items li{
+    padding: 0 15px;
+}
+
+nav .navbar-items li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+nav .navbar-items li a:hover{
+    color: #ff9009;
+}
+
+nav form{
+    display: flex;
+    height: 40px;
+    border-radius: 2px;
+    padding: 2px;
+    background: #1e232b;
+    min-width: 15% !important;
+    border: 1px solid rgba(155, 155, 155, 0.2);
+}
+
+nav form .search-box{
+    height: 100%;
+    width: 100%;
+    padding: 0 10px;
+    color: white;
+    font-weight: 500;
+    background: none;
+    border: none;
+    font-size: 17px;
+}
+
+nav form button{
+    padding: 0 15px;
+    background-color: #ff9009;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    color: white;
+    border-radius: 2px;
+}
+
+nav .icon-menu,
+nav .icon-search,
+nav .icon-cancel{
+    width: 40px;
+    color: white;
+    text-align: center;
+    margin: 0 50px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .icon-menu span,
+nav .icon-search,
+nav .icon-cancel{
+    display: none;
+}
+
+@media (max-width: 1245px){
+    nav{
+        padding: 0 100px;
+    }
+
+    nav .navbar-items{
+        position: absolute;
+        z-index: 99;
+        top: 70px;
+        width: 100%;
+        height: 100%;
+        background: #14141f;
+        display: inline-block;
+        padding: 10px 50px 0 50px;
+        text-align: center;
+    }
+
+    nav .navbar-items li{
+        line-height: 40px;
+        margin: 30px 0;
+    }
+
+    nav .navbar-items li a{
+        font-size: 20px;
+    }
+
+    nav form{
+        display: none;
+    }
+
+    nav .icon-menu{
+        display: block;
+    }
+
+    nav .icon-search,
+    nav .icon-menu span{
+        display: block;
+    }
+
+}
