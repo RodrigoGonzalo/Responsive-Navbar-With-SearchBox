@@ -25,11 +25,39 @@
             <li><a href="#">Feedback</a></li>
         </div>
         <div class="icon-search"><span class="fas fa-search"></span></div>
-        <div class="icon-cancel"><span class="fas fa-search"></span></div>
+        <div class="icon-cancel"><span class="fas fa-cancel"></span></div>
         <form action="#">
             <input type="search" class="search-box" placeholder="Search" required>
             <button class="fas fa-search"></button>
         </form>
     </nav>
+
+    <script>
+        const menuButton = document.querySelector(".icon-menu span");
+        const searchButton = document.querySelector(".icon-search");
+        const cancelButton = document.querySelector(".icon-cancel");
+        const navItems = document.querySelector(".navbar-items");
+        const form = document.querySelector("form");
+        menuButton.onclick = () =>{
+            navItems.classList.add("active");
+            menuButton.classList.add("hide");
+            searchButton.classList.add("hide");
+            cancelButton.classList.add("show");
+        }
+        cancelButton.onclick = () =>{
+            navItems.classList.remove("active");
+            menuButton.classList.remove("hide");
+            searchButton.classList.remove("hide");
+            cancelButton.classList.remove("show");
+            cancelButton.style.color = "#ff3d00";
+            form.classList.remove("active");
+        }
+        searchButton.onclick = () =>{
+            form.classList.add("active");
+            searchButton.classList.add("hide");
+            cancelButton.classList.add("show");
+        }
+    </script>
+
 </body>
 </html>
