@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar With Search Box</title>
+
+    <!--Link to style.css-->
+    <link rel="stylesheet" type="text/css" href="./CSS/style.css">
+
+    <!--Link to Font Awesome CSS-->
+    <link rel="stylesheet" type="text/css" href="./Font Awesome/fontawesome-free-6.4.0-web/css/all.css">
+
+</head>
+<body>
+    <nav>
+        <div class="icon-menu"><span class="fas fa-bars"></span></div>
+        <div class="logo">Logo</div>
+        <div class="navbar-items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Feedback</a></li>
+        </div>
+        <div class="icon-search"><span class="fas fa-search"></span></div>
+        <div class="icon-cancel"><span class="fas fa-cancel"></span></div>
+        <form action="#">
+            <input type="search" class="search-box" placeholder="Search" required>
+            <button class="fas fa-search"></button>
+        </form>
+    </nav>
+
+    <script>
+        const menuButton = document.querySelector(".icon-menu span");
+        const searchButton = document.querySelector(".icon-search");
+        const cancelButton = document.querySelector(".icon-cancel");
+        const navItems = document.querySelector(".navbar-items");
+        const form = document.querySelector("form");
+        menuButton.onclick = () =>{
+            navItems.classList.add("active");
+            menuButton.classList.add("hide");
+            searchButton.classList.add("hide");
+            cancelButton.classList.add("show");
+        }
+        cancelButton.onclick = () =>{
+            navItems.classList.remove("active");
+            menuButton.classList.remove("hide");
+            searchButton.classList.remove("hide");
+            cancelButton.classList.remove("show");
+            cancelButton.style.color = "#ff3d00";
+            form.classList.remove("active");
+        }
+        searchButton.onclick = () =>{
+            form.classList.add("active");
+            searchButton.classList.add("hide");
+            cancelButton.classList.add("show");
+        }
+    </script>
+
+</body>
+</html>
